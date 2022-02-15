@@ -1,7 +1,6 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Texts from "../../../components/Texts";
-import logo from '../../../../assets/logo.png';
 
 
 interface Props{
@@ -10,9 +9,10 @@ interface Props{
     farmName: string,
     description: string,
     price: string,
+    button: string,
 }
 
-export default function Details({name, farmLogo, farmName, description, price} : Props){
+export default function Details({name, farmLogo, farmName, description, price, button} : Props){
     return (
         <>
         <Texts style={styles.name}>{name}</Texts>
@@ -22,6 +22,9 @@ export default function Details({name, farmLogo, farmName, description, price} :
         </View>
         <Texts style={styles.description}>{description}</Texts>
         <Texts style={styles.price}>{price}</Texts>
+        <TouchableOpacity style={styles.button}>
+            <Texts style={styles.buttonText}>{button}</Texts>
+        </TouchableOpacity>
         </>
     )
 }
@@ -57,5 +60,18 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8,
-    }
+    },
+    button:{
+        marginTop: 16,
+        backgroundColor: "#2A9F85",
+        paddingVertical: 16,
+        borderRadius: 6,
+    },
+    buttonText:{
+        textAlign: "center",
+        color: "#FFFFFF",
+        fontSize: 16,
+        lineHeight: 26,
+        fontWeight: "bold",
+    },
 })

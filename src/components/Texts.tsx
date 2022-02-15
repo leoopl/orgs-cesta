@@ -2,7 +2,7 @@ import {Text, StyleSheet, TextStyle} from 'react-native';
 
 interface Props{
     children: string
-    style: TextStyle
+    style?: TextStyle
 }
 
 export default function Texts({children, style} : Props) {
